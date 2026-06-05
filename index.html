@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Room Sticker - Decor Game</title>
+    <meta name="description" content="Drag and drop cute stickers to decorate your cozy café room!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Completion Overlay -->
+    <div id="completion-overlay" class="completion-overlay hidden">
+        <div class="completion-content">
+            <div class="completion-stars">
+                <span class="star">⭐</span>
+                <span class="star big">🌟</span>
+                <span class="star">⭐</span>
+            </div>
+            <h2>Level Complete!</h2>
+            <p>You decorated the café beautifully!</p>
+            <button id="btn-replay" class="btn-replay">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div id="game-container" class="game-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button id="btn-home" class="top-btn" aria-label="Home">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </button>
+            <div class="level-badge">
+                <span class="level-text">LVL 1</span>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span id="progress-percent" class="progress-percent">0%</span>
+            </div>
+            <button id="btn-hint" class="top-btn hint-btn" aria-label="Hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </button>
+        </div>
+
+        <!-- Room Area -->
+        <div id="room-area" class="room-area">
+            <div id="room-wrapper" class="room-wrapper">
+                <!-- Empty room background -->
+                <img id="room-bg" src="assets/room_bare.png" alt="Empty café room" class="room-bg" draggable="false">
+                <!-- Full room shown on completion -->
+                <img id="room-full" src="assets/room_full.png" alt="Full café room" class="room-full hidden" draggable="false">
+                <!-- Drop zones (silhouettes) will be positioned here -->
+                <div id="drop-zones" class="drop-zones"></div>
+                <!-- Placed stickers layer -->
+                <div id="placed-stickers" class="placed-stickers"></div>
+            </div>
+        </div>
+
+        <!-- Counter -->
+        <div class="counter-row">
+            <div id="sticker-counter" class="sticker-counter">
+                <span id="counter-current">0</span>/<span id="counter-total">6</span>
+            </div>
+            <button id="btn-zoom" class="zoom-btn" aria-label="Zoom">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
+        </div>
+
+        <!-- Sticker Tray -->
+        <div id="sticker-tray" class="sticker-tray">
+            <div id="tray-scroll" class="tray-scroll">
+                <!-- Stickers will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

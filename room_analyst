@@ -1,0 +1,519 @@
+# 🎮 Phân Tích Game Room Sticker - Decor Phòng
+
+## Tổng Quan Game
+
+Game kéo thả sticker vào phòng trống theo góc nhìn **isometric (2.5D)**, phong cách **cute/kawaii** với nhân vật chính là **mèo trắng tròn** (dạng marshmallow). Mỗi room là một level với theme khác nhau.
+
+---
+
+## 📐 Quy Tắc Thiết Kế Chung
+
+| Yếu tố | Mô tả |
+|---------|-------|
+| **Góc nhìn** | Isometric (2.5D), nhìn từ trên xuống nghiêng ~30° |
+| **Bố cục room** | Hình hộp mở 2 mặt (trước + phải), thấy 3 mặt tường + sàn |
+| **Phong cách** | Cute/Kawaii, line art đen, màu pastel, flat shading |
+| **Nhân vật** | Mèo trắng tròn (marshmallow cat) - xuất hiện nhiều pose |
+| **Sticker tray** | Phía dưới màn hình, cuộn ngang, hiển thị ~3-4 sticker |
+| **Counter** | Hiển thị "X/Y" (đã đặt/tổng sticker) ở góc dưới trái |
+| **Level info** | Góc trên giữa: "LVL X" + thanh % hoàn thành |
+| **Sticker chưa đặt** | Hiển thị dạng outline/silhouette trắng trên room |
+| **Sticker đang kéo** | Phóng to nhẹ, có đường kéo từ tray lên |
+
+### Quy tắc sticker:
+- Mỗi level có **6-43 sticker** (tùy độ phức tạp)
+- Sticker gồm: **đồ nội thất, đồ trang trí, nhân vật mèo, đồ ăn/uống, phụ kiện theme**
+- Sticker có **nhiều kích cỡ** khác nhau (nhỏ: chai lọ, lớn: tủ/giường)
+- Vị trí đặt sticker có **silhouette trắng** gợi ý
+
+---
+
+## 🏠 Phân Tích Chi Tiết Từng Room
+
+---
+
+### Room 1 & 2 - 🧙 Phòng Phù Thủy / Alchemy Lab
+**Level:** 1 | **Tổng sticker:** 34 | **Hoàn thành:** 93%
+
+**Theme:** Phòng thí nghiệm phù thủy/phép thuật
+
+**Bảng màu:** Xanh ngọc (teal), nâu gỗ tối, tím, xanh lá
+
+**Đồ nội thất chính:**
+- Kệ sách gỗ lớn (cao, 4 tầng)
+- Bàn làm việc gỗ dài
+- Tủ kính xanh ngọc
+- Kệ treo tường nhiều tầng
+
+**Đồ trang trí & sticker đã đặt:**
+- Pha lê tím lớn (trên đỉnh kệ, phát sáng vàng)
+- Nồi cauldron lớn (chứa chất lỏng xanh sủi bọt)
+- Bình thuốc/potion nhiều màu (đỏ, xanh, tím, cam)
+- Lọ thủy tinh chứa nguyên liệu
+- Sách phép thuật mở
+- Đèn lồng treo xanh
+- Mạng nhện góc trần
+- Hộp sọ trên kệ cao
+- Thảo mộc/herb treo tường
+- Cây leo xanh
+- Biển hiệu tròn (có biểu tượng trăng lưỡi liềm)
+- Cửa sổ vòm gothic xanh
+- Bình gốm/vase lớn
+
+**Nhân vật mèo (poses):**
+- Mèo đọc sách phép
+- Mèo khuấy nồi cauldron (đội mũ phù thủy)
+- Mèo pha chế (đứng bên bàn)
+- Mèo đội mũ phù thủy (trên kệ, trong chậu)
+
+**Sticker chờ kéo (tray):**
+- 🐱 Mèo mặc áo choàng xanh
+- 🎃 Hộp bí ngô (wooden crate)
+- 🕯️ Đèn nến 5 nhánh (candelabra)
+
+---
+
+### Room 3 - 🎃 Phòng Halloween Party
+**Level:** 1 | **Tổng sticker:** 43 | **Hoàn thành:** 51%
+
+**Theme:** Phòng khách trang trí Halloween
+
+**Bảng màu:** Tím lavender, cam bí ngô, hồng, nâu gỗ ấm
+
+**Đồ nội thất chính:**
+- Sofa hồng lớn (có gối trang trí)
+- Bàn tròn ăn tiệc (nhiều ghế)
+- Cầu thang gỗ xoắn
+- Tủ buffet/sideboard hồng-xanh
+- Lò sưởi (fireplace)
+- Kệ sách nhỏ
+
+**Đồ trang trí & sticker đã đặt:**
+- Bí ngô Jack-o-lantern (nhiều kích cỡ)
+- Dây đèn/garland cam treo tường
+- Mạng nhện + nhện treo
+- Tranh treo tường (khung vàng)
+- Đèn lồng gothic (đang phát sáng vàng - sticker đang kéo)
+- Ngôi sao vàng rải rác ngoài phòng
+- Nến trên bàn
+- Bánh cupcake/treats Halloween trên bàn
+- Hoa hồng đỏ trong bình
+- Thảm tròn trắng
+- Cửa sổ xanh dương (có rèm cam)
+- Ma xanh dương cute (blue ghost)
+
+**Nhân vật mèo (poses):**
+- Mèo ngồi sofa
+- Mèo đứng cầu thang (đội mũ)
+- Mèo ngồi bàn tiệc
+- Mèo ngồi ghế (đội mũ phù thủy)
+- Ma mèo trắng (ghost cat)
+
+**Sticker chờ kéo (tray):**
+- 🧙 Mũ phù thủy xanh ngọc
+- 🍵 Nồi cauldron xanh (nhỏ)
+- 📚 Chồng sách cổ (có nến)
+
+---
+
+### Room 4 - 🛏️ Phòng Ngủ Nữ Sinh
+**Level:** 2 | **Tổng sticker:** 33 | **Hoàn thành:** 67%
+
+**Theme:** Phòng ngủ cá nhân phong cách nữ tính
+
+**Bảng màu:** Hồng pastel, tím lavender, xanh baby blue, trắng
+
+**Đồ nội thất chính:**
+- Giường đơn (ga tím, gối hồng)
+- Bàn học gỗ + laptop
+- Ghế xoay xanh
+- Tủ quần áo 2 cánh (trắng-cam)
+- Kệ sách treo tường
+
+**Đồ trang trí & sticker đã đặt:**
+- Bảng cork/pin board (có ảnh, ghi chú, sticker)
+- Laptop mở (trên bàn)
+- Rèm cửa tím
+- Cây xanh nhỏ (cactus, potted plant)
+- Sách trên kệ
+- Gấu bông hồng (trên giường)
+- Gối trang trí
+- Thảm sàn hồng (gạch herringbone)
+
+**Nhân vật mèo (poses):**
+- Mèo ôm hộp/sách (đứng trước phòng, kích thước lớn)
+
+**Sticker chờ kéo (tray):**
+- 🧳 Vali vintage vàng
+- 🎒 Túi xách/cặp hồng
+
+---
+
+### Room 5 - 🛁 Phòng Tắm Spa
+**Level:** 5 | **Tổng sticker:** 6 | **Hoàn thành:** 33%
+
+**Theme:** Phòng tắm/spa thư giãn
+
+**Bảng màu:** Xanh mint, xanh lá nhạt, kem, nâu gỗ ấm
+
+**Đồ nội thất chính:**
+- Bồn tắm clawfoot trắng (mèo đang tắm)
+- Bồn rửa mặt + gương tròn
+- Bồn cầu
+- Máy giặt
+- Bàn gỗ thấp (coffee table)
+- Kệ treo tường (đựng mỹ phẩm)
+- Tủ nhỏ cạnh bồn rửa
+
+**Đồ trang trí & sticker đã đặt:**
+- Vòi sen vàng
+- Chai lọ skincare/mỹ phẩm (nhiều loại)
+- Rổ đan (đựng khăn)
+- Cây xanh (potted plant, vòng hoa treo)
+- Thảm tròn xám
+- Khăn tắm vàng
+- Bọt xà phòng
+- Gương soi
+
+**Nhân vật mèo (poses):**
+- Mèo ngâm bồn tắm (đội mũ tắm, cầm đồ)
+- Mèo đứng rửa mặt/đánh răng
+- Mèo trong bồn tắm nhỏ (sticker đang kéo)
+
+**Sticker chờ kéo (tray):**
+- 🦆 Vịt cao su vàng
+- 🟣 Hộp tím tròn (bath bomb/cream jar)
+
+---
+
+### Room 6 - 💪 Phòng Gym
+**Level:** 6 | **Tổng sticker:** 8 | **Hoàn thành:** 37%
+
+**Theme:** Phòng tập gym cá nhân
+
+**Bảng màu:** Xanh dương (blue), đỏ, cam, xám kim loại
+
+**Đồ nội thất chính:**
+- Máy chạy bộ treadmill
+- Ghế bench press + tạ
+- Kệ đựng tạ/dumbbell rack
+- Giá đựng bóng + dụng cụ thể thao
+
+**Đồ trang trí & sticker đã đặt:**
+- Gương lớn (phản chiếu)
+- Bảng điểm số/timer điện tử
+- Bình nước
+- Cúp vàng trophy
+- Hộp đựng dụng cụ
+- Tạ đĩa (weight plates) treo tường
+- Poster mèo tập gym
+- Thảm tập yoga/mat xanh
+- Dây thừng nhảy
+- Bóng tập
+
+**Nhân vật mèo (poses):**
+- Mèo chạy treadmill
+- Mèo nâng tạ (bench press)
+- Mèo leo dây
+
+**Sticker chờ kéo (tray):**
+- 🐱 Mèo đứng (outline trắng) x2
+- 🥊 Bao cát boxing đỏ
+- 🐱 Mèo pose tập (outline trắng)
+
+---
+
+### Room 7 - 🎬 Rạp Chiếu Phim Mini (Cute Cinema)
+**Level:** 7 | **Tổng sticker:** 24 | **Hoàn thành:** 98%
+
+**Theme:** Quầy sảnh rạp chiếu phim
+
+**Bảng màu:** Đỏ rạp chiếu, vàng, trắng, xám
+
+**Đồ nội thất chính:**
+- Quầy bán vé/snack (counter lớn)
+- Máy bán nước tự động (xanh dương)
+- Máy gắp thú (crane machine, hồng)
+- Cửa rạp "HALL 1" (cửa gỗ)
+- Kệ trưng bày snack
+
+**Đồ trang trí & sticker đã đặt:**
+- Biển "CUTE CINEMA" (chữ vàng trên nền đỏ)
+- Bảng "TODAY CAT 007" (lịch chiếu)
+- Biển "SNACKS"
+- Máy popcorn
+- Ly nước có ống hút
+- Kẹo/snack trưng bày
+- Dây thừng chắn đỏ (velvet rope)
+- Thảm đỏ
+- Poster phim treo tường
+- Cửa kính
+
+**Nhân vật mèo (poses):**
+- Mèo bán vé (đứng sau quầy, đội mũ)
+- Mèo mua vé (đứng trước quầy)
+- Mèo khách hàng
+- Mèo đeo kính 3D (sticker đang kéo, lớn)
+
+**Sticker chờ kéo (tray):**
+- 🍿 Máy pha/kem (candy machine hồng)
+- 🍿 Xô bắp rang bơ (popcorn bucket)
+
+---
+
+## 📊 Tổng Hợp Pattern
+
+### Phân bố sticker theo loại (trung bình mỗi room):
+
+| Loại | Tỉ lệ | Ví dụ |
+|------|--------|-------|
+| Đồ nội thất lớn | ~15-20% | Giường, bàn, tủ, kệ |
+| Đồ trang trí nhỏ | ~30-40% | Chai lọ, nến, sách, khung ảnh |
+| Nhân vật mèo | ~10-15% | 2-5 pose mèo/room |
+| Đồ ăn/uống | ~10-15% | Snack, bình nước, cupcake |
+| Phụ kiện theme | ~15-20% | Potion, bí ngô, tạ, vé phim |
+| Cây cối/thiên nhiên | ~5-10% | Cây chậu, hoa, dây leo |
+
+### Cấu trúc difficulty:
+- **Level 1-2:** 33-43 sticker (nhiều, dễ tìm vị trí)
+- **Level 5-6:** 6-8 sticker (ít, nhưng cần chính xác hơn)
+- **Level 7:** 24 sticker (trung bình)
+
+---
+
+## 🎨 DANH SÁCH PROMPT TẠO ROOM & STICKER MỚI
+
+### Quy tắc chung cho mọi prompt:
+
+> [!IMPORTANT]
+> **Style nhất quán:** Mọi prompt phải bao gồm các keyword: `isometric room, cute kawaii style, thick black outlines, flat pastel colors, 2.5D perspective, white marshmallow cat characters, detailed miniature dollhouse style, sticker-like illustration, clean white background outside room`
+
+---
+
+### 🏝️ Level Đề Xuất 1: Phòng Bếp / Kitchen
+
+**Prompt tạo Room (nền trống):**
+```
+Isometric 2.5D miniature kitchen room, cute kawaii dollhouse style, thick black outlines, 
+flat colors. Warm pastel yellow walls, white tile floor with checkerboard pattern. 
+Contains: wooden kitchen counter with sink, stove/oven, refrigerator, small dining table 
+with chairs, hanging pot rack, window with yellow curtains. Some items shown as white 
+silhouette placeholders. Clean white background outside room. Mobile game art style.
+```
+
+**Prompt tạo các Sticker riêng lẻ (nền trong suốt):**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo đầu bếp | `Cute white marshmallow cat wearing chef hat and apron, holding a frying pan, kawaii style, thick black outlines, sticker with transparent background` |
+| 2 | Nồi súp | `Cute kawaii cooking pot with steam and vegetables sticking out, orange carrots and green herbs, thick black outlines, sticker transparent background` |
+| 3 | Bánh sinh nhật | `Cute kawaii birthday cake with strawberries and candles on a cake stand, pastel pink frosting, thick black outlines, sticker transparent background` |
+| 4 | Mèo ăn bánh | `Cute white marshmallow cat sitting at table eating cake with fork, happy expression, kawaii style, thick black outlines, sticker transparent background` |
+| 5 | Tủ lạnh retro | `Cute pastel mint green retro refrigerator with magnets and photos, slightly open door showing food inside, kawaii style, isometric view, thick black outlines, sticker transparent background` |
+| 6 | Kệ gia vị | `Wooden spice rack with colorful small bottles and jars, kawaii style labels, thick black outlines, isometric view, sticker transparent background` |
+| 7 | Cây thảo mộc | `Small potted herb plants in cute ceramic pots on windowsill, basil mint rosemary, kawaii style, thick black outlines, sticker transparent background` |
+| 8 | Máy xay sinh tố | `Cute kawaii blender with colorful fruit smoothie inside, pastel purple, thick black outlines, sticker transparent background` |
+| 9 | Mèo rửa bát | `White marshmallow cat standing on stool washing dishes at sink, wearing rubber gloves, soap bubbles, kawaii style, thick black outlines, sticker transparent background` |
+| 10 | Hộp bánh donut | `Open box of colorful donuts with sprinkles and glazing, kawaii faces on donuts, thick black outlines, sticker transparent background` |
+
+---
+
+### 🌿 Level Đề Xuất 2: Phòng Vườn / Garden Room
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature indoor garden room / greenhouse, cute kawaii dollhouse style, 
+thick black outlines, flat colors. Light green walls with large glass windows, 
+terracotta tile floor. Contains: wooden plant shelves, watering station, small fountain, 
+garden bench, hanging planters. Some items shown as white silhouette placeholders. 
+Clean white background outside room. Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo tưới cây | `Cute white marshmallow cat holding watering can, watering flowers, wearing straw hat, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Chậu hoa hướng dương | `Cute potted sunflower in terracotta pot, kawaii smiling face on flower, thick black outlines, sticker transparent background` |
+| 3 | Bướm | `Cute kawaii butterfly with pastel pink and purple wings, thick black outlines, sticker transparent background` |
+| 4 | Mèo ngủ võng | `White marshmallow cat sleeping in small hammock between plants, peaceful expression, kawaii style, thick black outlines, sticker transparent background` |
+| 5 | Xô dụng cụ làm vườn | `Cute garden tool bucket with shovel rake and gloves, kawaii style, thick black outlines, sticker transparent background` |
+| 6 | Đài phun nước mini | `Small cute stone fountain with water flowing, kawaii bird sitting on edge, thick black outlines, isometric view, sticker transparent background` |
+| 7 | Chậu xương rồng | `Collection of 3 cute kawaii cacti in colorful pots, different shapes, thick black outlines, sticker transparent background` |
+| 8 | Mèo đào đất | `White marshmallow cat digging in garden bed with small shovel, dirt on face, kawaii style, thick black outlines, sticker transparent background` |
+
+---
+
+### 🎵 Level Đề Xuất 3: Phòng Âm Nhạc / Music Studio
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature music studio room, cute kawaii dollhouse style, thick black 
+outlines, flat colors. Deep purple walls with acoustic foam panels, wooden floor. 
+Contains: upright piano, drum set, guitar stand, music sheet stand, recording equipment, 
+speakers, soundproof window. Some items as white silhouette placeholders. 
+Clean white background outside room. Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo chơi piano | `Cute white marshmallow cat playing upright piano, musical notes floating, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Guitar acoustic | `Cute kawaii acoustic guitar leaning on stand, pastel brown wood, thick black outlines, isometric view, sticker transparent background` |
+| 3 | Mèo ca sĩ | `White marshmallow cat holding microphone and singing, wearing headphones, star effects, kawaii style, thick black outlines, sticker transparent background` |
+| 4 | Bộ trống mini | `Cute kawaii drum set with colorful drums, cymbals, drumsticks, isometric view, thick black outlines, sticker transparent background` |
+| 5 | Loa/Speaker | `Cute kawaii bluetooth speaker with music notes coming out, pastel blue, thick black outlines, sticker transparent background` |
+| 6 | Đĩa vinyl | `Stack of colorful vinyl records with cute album cover art, kawaii style, thick black outlines, sticker transparent background` |
+| 7 | Mèo DJ | `White marshmallow cat wearing headphones at DJ turntable, cool expression, kawaii style, thick black outlines, sticker transparent background` |
+| 8 | Saxophone vàng | `Cute kawaii golden saxophone, shiny, thick black outlines, sticker transparent background` |
+
+---
+
+### 🏥 Level Đề Xuất 4: Phòng Bệnh Viện Thú Y / Vet Clinic
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature veterinary clinic room, cute kawaii dollhouse style, thick black 
+outlines, flat colors. Soft blue walls, clean white tile floor. Contains: examination table, 
+medicine cabinet, weight scale, small pet beds, desk with computer, medical posters on wall. 
+Some items as white silhouette placeholders. Clean white background outside room. 
+Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo bác sĩ | `Cute white marshmallow cat wearing doctor coat and stethoscope, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Tủ thuốc | `Cute medicine cabinet with colorful bottles and bandages, kawaii style, thick black outlines, isometric view, sticker transparent background` |
+| 3 | Mèo bệnh nhân | `White marshmallow cat with small bandage on head, sitting on examination table, slightly sad kawaii expression, thick black outlines, sticker transparent background` |
+| 4 | Cân thú cưng | `Cute kawaii pet scale with small puppy sitting on it, thick black outlines, sticker transparent background` |
+| 5 | Giỏ đựng thú cưng | `Cute pet carrier basket with small cat peeking out, pastel pink, kawaii style, thick black outlines, sticker transparent background` |
+| 6 | Bình truyền dịch | `Cute kawaii IV drip stand with smiley face on bag, thick black outlines, sticker transparent background` |
+| 7 | Mèo y tá | `White marshmallow cat wearing nurse hat, holding clipboard, kawaii style, thick black outlines, sticker transparent background` |
+| 8 | Hộp cứu thương | `Cute kawaii first aid kit box, red cross symbol, open with bandages visible, thick black outlines, sticker transparent background` |
+
+---
+
+### ☕ Level Đề Xuất 5: Quán Café
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature cozy cafe interior, cute kawaii dollhouse style, thick black 
+outlines, flat colors. Warm brown brick walls, wooden floor. Contains: coffee bar counter 
+with espresso machine, display case with pastries, small round tables with chairs, 
+chalkboard menu on wall, pendant lights, window with cafe curtains. 
+Some items as white silhouette placeholders. Clean white background outside room. 
+Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo barista | `Cute white marshmallow cat barista wearing apron, pouring latte art, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Máy espresso | `Cute kawaii espresso machine, shiny copper and silver, with steam, thick black outlines, isometric view, sticker transparent background` |
+| 3 | Bánh croissant | `Cute kawaii golden croissant on small plate, flaky layers visible, thick black outlines, sticker transparent background` |
+| 4 | Tủ kính bánh | `Glass display case with colorful cakes and pastries inside, kawaii style, isometric view, thick black outlines, sticker transparent background` |
+| 5 | Mèo đọc sách | `White marshmallow cat sitting in armchair reading book, coffee cup beside, cozy kawaii style, thick black outlines, sticker transparent background` |
+| 6 | Bảng menu | `Cute chalkboard menu sign with coffee drawings, "MENU" text, kawaii style, thick black outlines, sticker transparent background` |
+| 7 | Ly latte art | `Cute kawaii latte cup with bear-shaped latte art on top, steam rising, thick black outlines, sticker transparent background` |
+| 8 | Mèo khách hàng | `White marshmallow cat sitting at small round table, sipping coffee happily, kawaii style, thick black outlines, sticker transparent background` |
+| 9 | Kệ cốc | `Wooden shelf with colorful cute ceramic mugs hanging, kawaii style, thick black outlines, sticker transparent background` |
+| 10 | Cây treo chậu | `Hanging macrame plant holder with trailing pothos plant, kawaii style, thick black outlines, sticker transparent background` |
+
+---
+
+### 🏖️ Level Đề Xuất 6: Phòng Bãi Biển / Beach Hut
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature beach hut room, cute kawaii dollhouse style, thick black outlines, 
+flat colors. Light blue wooden plank walls, sandy floor. Contains: surfboard leaning on wall, 
+hammock, small bamboo table, tiki bar counter, window showing ocean view. 
+Some items as white silhouette placeholders. Clean white background outside room. 
+Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo lướt sóng | `Cute white marshmallow cat standing on surfboard, wearing sunglasses, wave splash, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Dù che nắng | `Cute colorful beach umbrella, red and white stripes, kawaii style, thick black outlines, sticker transparent background` |
+| 3 | Phao bơi | `Cute kawaii inflatable flamingo pool float, pastel pink, thick black outlines, sticker transparent background` |
+| 4 | Mèo uống nước dừa | `White marshmallow cat lying in beach chair drinking coconut with straw, relaxed kawaii expression, thick black outlines, sticker transparent background` |
+| 5 | Xô cát & xẻng | `Cute kawaii sand bucket with shovel and starfish, pastel yellow, thick black outlines, sticker transparent background` |
+| 6 | Đèn Tiki | `Cute tiki torch with flame, carved wooden face, kawaii style, thick black outlines, sticker transparent background` |
+| 7 | Ván lướt | `Colorful surfboard with flower pattern, leaning on stand, kawaii style, thick black outlines, isometric view, sticker transparent background` |
+| 8 | Sao biển & vỏ sò | `Collection of cute kawaii starfish and seashells, pastel colors, thick black outlines, sticker transparent background` |
+
+---
+
+### 🎄 Level Đề Xuất 7: Phòng Giáng Sinh / Christmas Room
+
+**Prompt tạo Room:**
+```
+Isometric 2.5D miniature Christmas living room, cute kawaii dollhouse style, thick black 
+outlines, flat colors. Warm red and green walls with wallpaper pattern, wooden floor with 
+cozy rug. Contains: fireplace with stockings, Christmas tree, cozy armchair, gift table, 
+window with snow outside. Some items as white silhouette placeholders. 
+Clean white background outside room with snowflakes. Mobile game art style.
+```
+
+**Prompt tạo các Sticker:**
+
+| # | Sticker | Prompt |
+|---|---------|--------|
+| 1 | Mèo Santa | `Cute white marshmallow cat wearing Santa hat and red coat, holding gift bag, kawaii style, thick black outlines, sticker transparent background` |
+| 2 | Cây thông Noel | `Cute kawaii decorated Christmas tree with star on top, ornaments and lights, pastel colors, thick black outlines, isometric view, sticker transparent background` |
+| 3 | Hộp quà | `Stack of cute wrapped Christmas gifts with bows, different sizes and colors, kawaii style, thick black outlines, sticker transparent background` |
+| 4 | Vớ Giáng Sinh | `Cute kawaii Christmas stockings hanging, red and green with cat paw patterns, thick black outlines, sticker transparent background` |
+| 5 | Mèo uống cacao | `White marshmallow cat wrapped in blanket holding hot cocoa mug with marshmallows, cozy kawaii style, thick black outlines, sticker transparent background` |
+| 6 | Người tuyết | `Cute kawaii small snowman with scarf and carrot nose, thick black outlines, sticker transparent background` |
+| 7 | Vòng hoa Noel | `Cute Christmas wreath with red berries and bow, kawaii style, thick black outlines, sticker transparent background` |
+| 8 | Tuần lộc mini | `Cute kawaii small reindeer with red nose, thick black outlines, sticker transparent background` |
+| 9 | Mèo mở quà | `White marshmallow cat excitedly opening a gift box with sparkle effects, kawaii style, thick black outlines, sticker transparent background` |
+| 10 | Đèn Giáng Sinh | `String of cute kawaii colorful Christmas lights, bulbs with happy faces, thick black outlines, sticker transparent background` |
+
+---
+
+## 🔧 Template Prompt Tổng Quát
+
+### Prompt tạo Room mới (copy & thay đổi):
+```
+Isometric 2.5D miniature [LOẠI PHÒNG] room, cute kawaii dollhouse style, 
+thick black outlines, flat colors. [MÀU TƯỜNG] walls, [LOẠI SÀN] floor. 
+Contains: [DANH SÁCH ĐỒ NỘI THẤT CỐ ĐỊNH]. 
+Some items shown as white silhouette placeholders. 
+Clean white background outside room. Mobile game art style.
+```
+
+### Prompt tạo Sticker nhân vật mèo:
+```
+Cute white marshmallow cat [HÀNH ĐỘNG], wearing [TRANG PHỤC], 
+[BIỂU CẢM] expression, kawaii style, thick black outlines, 
+sticker with transparent background
+```
+
+### Prompt tạo Sticker đồ vật:
+```
+Cute kawaii [TÊN ĐỒ VẬT], [MÔ TẢ CHI TIẾT MÀU SẮC VÀ HÌNH DÁNG], 
+thick black outlines, isometric view, sticker with transparent background
+```
+
+---
+
+## 📝 Lưu Ý Quan Trọng
+
+> [!TIP]
+> - Mỗi room nên có **ít nhất 3 pose mèo khác nhau** để tạo cảm giác sống động
+> - Sticker nên có **3 cỡ**: nhỏ (phụ kiện), vừa (đồ dùng), lớn (nội thất/nhân vật)
+> - Giữ **tỉ lệ 60% đồ vật + 25% nhân vật + 15% trang trí nhỏ**
+> - Room nền nên có một số đồ **đã đặt sẵn** (~50-60%) để người chơi thấy ngay theme
+
+> [!WARNING]
+> - Cần đảm bảo **silhouette trắng** trên room khớp chính xác với sticker tương ứng
+> - Prompt cho sticker phải luôn có `transparent background` để dễ tích hợp vào game
+> - Khi gen room, cần test nhiều seed để đảm bảo góc isometric nhất quán giữa các level
