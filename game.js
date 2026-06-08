@@ -22,73 +22,27 @@
         roomEmpty: 'assets/room_bare.png',
         roomFull: 'assets/room_full.png',
         stickers: [
-            // Layer 1: Walls
-            {
-                id: 'menu',
-                name: 'Menu Board',
-                src: 'assets/sticker_menu.png',
-                target: { x: 16, y: 10, w: 15, h: 18 },
-                trayOrder: 0,
-            },
-            {
-                id: 'plant',
-                name: 'Hanging Plant',
-                src: 'assets/sticker_plant.png',
-                target: { x: 75, y: 4, w: 10, h: 24 },
-                trayOrder: 1,
-            },
-            // Layer 2: Large Furniture
-            {
-                id: 'bar_counter',
-                name: 'Coffee Bar',
-                src: 'assets/sticker_bar_counter.png',
-                target: { x: 36, y: 25, w: 38, h: 22 },
-                trayOrder: 2,
-            },
-            {
-                id: 'bookshelf',
-                name: 'Bookshelf',
-                src: 'assets/sticker_bookshelf.png',
-                target: { x: 68, y: 24, w: 12, h: 18 },
-                trayOrder: 3,
-            },
-            {
-                id: 'armchair',
-                name: 'Armchair',
-                src: 'assets/sticker_armchair.png',
-                target: { x: 66, y: 38, w: 16, h: 18 },
-                trayOrder: 4,
-            },
-            // Layer 3: Counter Items
-            {
-                id: 'espresso',
-                name: 'Espresso Machine',
-                src: 'assets/sticker_espresso.png',
-                target: { x: 24, y: 25, w: 12, h: 17 },
-                trayOrder: 5,
-            },
-            {
-                id: 'pastry',
-                name: 'Pastry Display',
-                src: 'assets/sticker_pastry.png',
-                target: { x: 47, y: 24, w: 14, h: 18 },
-                trayOrder: 6,
-            },
-            // Layer 4: Characters
-            {
-                id: 'barista',
-                name: 'Cat Barista',
-                src: 'assets/sticker_barista.png',
-                target: { x: 35, y: 24, w: 14, h: 22 },
-                trayOrder: 7,
-            },
-            {
-                id: 'cat_reading',
-                name: 'Reading Cat',
-                src: 'assets/sticker_cat_reading.png',
-                target: { x: 64, y: 38, w: 17, h: 22 },
-                trayOrder: 8,
-            },
+            { id: 'sticker_1', name: 'Sticker 1', src: 'assets/sticker_1.png' },
+            { id: 'sticker_5', name: 'Sticker 5', src: 'assets/sticker_5.png' },
+            { id: 'sticker_4', name: 'Sticker 4', src: 'assets/sticker_4.png' },
+            { id: 'sticker_2', name: 'Sticker 2', src: 'assets/sticker_2.png' },
+            { id: 'sticker_13', name: 'Sticker 13', src: 'assets/sticker_13.png' },
+            { id: 'sticker_3', name: 'Sticker 3', src: 'assets/sticker_3.png' },
+            { id: 'sticker_8', name: 'Sticker 8', src: 'assets/sticker_8.png' },
+            { id: 'sticker_6', name: 'Sticker 6', src: 'assets/sticker_6.png' },
+            { id: 'sticker_10', name: 'Sticker 10', src: 'assets/sticker_10.png' },
+            { id: 'sticker_18', name: 'Sticker 18', src: 'assets/sticker_18.png' },
+            { id: 'sticker_21', name: 'Sticker 21', src: 'assets/sticker_21.png' },
+            { id: 'sticker_15', name: 'Sticker 15', src: 'assets/sticker_15.png' },
+            { id: 'sticker_14', name: 'Sticker 14', src: 'assets/sticker_14.png' },
+            { id: 'sticker_16', name: 'Sticker 16', src: 'assets/sticker_16.png' },
+            { id: 'sticker_7', name: 'Sticker 7', src: 'assets/sticker_7.png' },
+            { id: 'sticker_9', name: 'Sticker 9', src: 'assets/sticker_9.png' },
+            { id: 'sticker_12', name: 'Sticker 12', src: 'assets/sticker_12.png' },
+            { id: 'sticker_11', name: 'Sticker 11', src: 'assets/sticker_11.png' },
+            { id: 'sticker_20', name: 'Sticker 20', src: 'assets/sticker_20.png' },
+            { id: 'sticker_19', name: 'Sticker 19', src: 'assets/sticker_19.png' },
+            { id: 'sticker_17', name: 'Sticker 17', src: 'assets/sticker_17.png' },
         ],
     };
 
@@ -216,14 +170,134 @@
     const elConfettiCanvas = $('#confetti-canvas');
 
     // ==========================================
+    // AUTO CALIBRATION (DYNAMIC ENGINE)
+    // ==========================================
+    async function autoCalibrateStickers() {
+        console.log('Start Dynamic Auto-Calibration...');
+        const fullImg = new Image(); fullImg.src = LEVEL_DATA.roomFull;
+        const bareImg = new Image(); bareImg.src = LEVEL_DATA.roomEmpty;
+        await Promise.all([
+            new Promise(r => { fullImg.onload = r; fullImg.onerror = r; }),
+            new Promise(r => { bareImg.onload = r; bareImg.onerror = r; })
+        ]);
+
+        const W = fullImg.naturalWidth || 1024;
+        const H = fullImg.naturalHeight || 1024;
+        
+        const canvas = document.createElement('canvas');
+        canvas.width = W; canvas.height = H;
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        
+        ctx.drawImage(fullImg, 0, 0); const fullData = ctx.getImageData(0, 0, W, H).data;
+        ctx.drawImage(bareImg, 0, 0); const bareData = ctx.getImageData(0, 0, W, H).data;
+        
+        const diffData = new Uint8Array(W * H * 3);
+        for (let i = 0; i < W * H; i++) {
+            diffData[i*3] = Math.abs(fullData[i*4] - bareData[i*4]);
+            diffData[i*3+1] = Math.abs(fullData[i*4+1] - bareData[i*4+1]);
+            diffData[i*3+2] = Math.abs(fullData[i*4+2] - bareData[i*4+2]);
+        }
+
+        const scale = 8;
+        const sW = Math.floor(W / scale), sH = Math.floor(H / scale);
+        const sDiffData = new Uint8Array(sW * sH * 3), sBareData = new Uint8Array(sW * sH * 3);
+        for (let y = 0; y < sH; y++) {
+            for (let x = 0; x < sW; x++) {
+                const srcIdx = ((y * scale) * W + (x * scale));
+                const dstIdx = y * sW + x;
+                sDiffData[dstIdx*3] = diffData[srcIdx*3]; sDiffData[dstIdx*3+1] = diffData[srcIdx*3+1]; sDiffData[dstIdx*3+2] = diffData[srcIdx*3+2];
+                sBareData[dstIdx*3] = bareData[srcIdx*4]; sBareData[dstIdx*3+1] = bareData[srcIdx*4+1]; sBareData[dstIdx*3+2] = bareData[srcIdx*4+2];
+            }
+        }
+
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;z-index:99999;font-size:18px;font-family:sans-serif;flex-direction:column;';
+        overlay.innerHTML = '<div style="font-size:24px;margin-bottom:15px">🛠️ Engine Auto-Calibrating...</div><div id="calib-progress">0%</div><div style="font-size:12px;opacity:0.6;margin-top:10px">Learning sticker positions from differences</div>';
+        document.body.appendChild(overlay);
+
+        for (let i=0; i<LEVEL_DATA.stickers.length; i++) {
+            const sticker = LEVEL_DATA.stickers[i];
+            document.getElementById('calib-progress').textContent = Math.round((i/LEVEL_DATA.stickers.length)*100) + '%';
+            await new Promise(r => setTimeout(r, 10)); // Yield
+            
+            const cleanSrc = getCleanSrc(sticker.id);
+            const img = new Image(); img.src = cleanSrc;
+            await new Promise(r => img.onload = r);
+            
+            const w = img.naturalWidth, h = img.naturalHeight;
+            if (w === 0) { sticker.target = {x:0,y:0,w:10,h:10}; continue; }
+            
+            canvas.width = w; canvas.height = h;
+            ctx.clearRect(0,0,w,h); ctx.drawImage(img, 0, 0);
+            const stData = ctx.getImageData(0, 0, w, h).data;
+            
+            const sw = Math.max(1, Math.floor(w / scale)), sh = Math.max(1, Math.floor(h / scale));
+            const sStData = new Uint8Array(sw * sh * 4);
+            for (let y = 0; y < sh; y++) {
+                for (let x = 0; x < sw; x++) {
+                    const srcIdx = ((y * scale) * w + (x * scale)) * 4, dstIdx = (y * sw + x) * 4;
+                    sStData[dstIdx] = stData[srcIdx]; sStData[dstIdx+1] = stData[srcIdx+1];
+                    sStData[dstIdx+2] = stData[srcIdx+2]; sStData[dstIdx+3] = stData[srcIdx+3];
+                }
+            }
+
+            let bestErr = Infinity, bestX = 0, bestY = 0;
+            for (let y = 0; y <= sH - sh; y++) {
+                for (let x = 0; x <= sW - sw; x++) {
+                    let err = 0, count = 0;
+                    for (let sy = 0; sy < sh; sy+=2) {
+                        for (let sx = 0; sx < sw; sx+=2) {
+                            const alpha = sStData[(sy * sw + sx) * 4 + 3] / 255.0;
+                            if (alpha < 0.5) continue;
+                            const stIdx = (sy * sw + sx) * 4;
+                            const bgIdx = ((y + sy) * sW + (x + sx)) * 3;
+                            const expR = alpha * Math.abs(sStData[stIdx] - sBareData[bgIdx]);
+                            const expG = alpha * Math.abs(sStData[stIdx+1] - sBareData[bgIdx+1]);
+                            const expB = alpha * Math.abs(sStData[stIdx+2] - sBareData[bgIdx+2]);
+                            err += Math.abs(expR - sDiffData[bgIdx]) + Math.abs(expG - sDiffData[bgIdx+1]) + Math.abs(expB - sDiffData[bgIdx+2]);
+                            count++;
+                        }
+                    }
+                    if (count > 0 && (err/count) < bestErr) { bestErr = err/count; bestX = x; bestY = y; }
+                }
+            }
+
+            let hBestErr = Infinity, hBestX = bestX * scale, hBestY = bestY * scale, sr = scale;
+            for (let y = Math.max(0, bestY * scale - sr); y <= Math.min(H - h, bestY * scale + sr); y++) {
+                for (let x = Math.max(0, bestX * scale - sr); x <= Math.min(W - w, bestX * scale + sr); x++) {
+                    let err = 0, count = 0;
+                    for (let sy = 0; sy < h; sy+=4) {
+                        for (let sx = 0; sx < w; sx+=4) {
+                            const alpha = stData[(sy * w + sx) * 4 + 3] / 255.0;
+                            if (alpha < 0.5) continue;
+                            const stIdx = (sy * w + sx) * 4;
+                            const bgIdx = ((y + sy) * W + (x + sx));
+                            const expR = alpha * Math.abs(stData[stIdx] - bareData[bgIdx*4]);
+                            const expG = alpha * Math.abs(stData[stIdx+1] - bareData[bgIdx*4+1]);
+                            const expB = alpha * Math.abs(stData[stIdx+2] - bareData[bgIdx*4+2]);
+                            err += Math.abs(expR - diffData[bgIdx*3]) + Math.abs(expG - diffData[bgIdx*3+1]) + Math.abs(expB - diffData[bgIdx*3+2]);
+                            count++;
+                        }
+                    }
+                    if (count > 0 && (err/count) < hBestErr) { hBestErr = err/count; hBestX = x; hBestY = y; }
+                }
+            }
+            sticker.target = { x: (hBestX / W) * 100, y: (hBestY / H) * 100, w: (w / W) * 100, h: (h / H) * 100 };
+        }
+        overlay.remove();
+    }
+
+    // ==========================================
     // INITIALIZATION
     // ==========================================
     async function init() {
         elCounterTotal.textContent = state.totalStickers;
 
-        // Clean sticker backgrounds first
         await preloadAndCleanStickers();
         console.log('✅ All sticker backgrounds cleaned');
+        
+        await autoCalibrateStickers();
+        console.log('✅ Dynamic auto-calibration complete');
 
         createDropZones();
         createTrayStickers();
@@ -278,7 +352,8 @@
     }
 
     function createTrayStickers() {
-        const sorted = [...LEVEL_DATA.stickers].sort((a, b) => a.trayOrder - b.trayOrder);
+        // Auto-sort by Y coordinate (far items first)
+        const sorted = [...LEVEL_DATA.stickers].sort((a, b) => a.target.y - b.target.y);
         sorted.forEach((sticker) => {
             const item = document.createElement('div');
             item.className = 'tray-sticker';
@@ -337,117 +412,61 @@
         state.isDragging = true;
         state.currentDrag = { stickerId, stickerData, trayItem };
 
-        // Calculate start position from center of tray item
         const trayRect = trayItem.getBoundingClientRect();
-        state.dragStartPos = {
-            x: trayRect.left + trayRect.width / 2,
-            y: trayRect.top + trayRect.height / 2,
-        };
+        state.dragStartPos = { x: trayRect.left + trayRect.width / 2, y: trayRect.top + trayRect.height / 2 };
 
-        // Mark tray item as dragging
         trayItem.classList.add('dragging');
-
-        // Create ghost
-        createDragGhost(stickerData, pos);
-
-        // Create curved trail SVG
-        createDragTrail();
-        updateDragTrail(pos);
-
-        // Hide hint if active
+        createTweezers(stickerData, pos);
         if (state.hintActive) toggleHint();
     }
 
     function onDragMove(e) {
         if (!state.isDragging || !state.currentDrag) return;
         e.preventDefault();
-
         const pos = getPointerPos(e);
 
-        // Move ghost
         if (state.dragGhost) {
-            const ghostW = state.dragGhost.offsetWidth;
-            const ghostH = state.dragGhost.offsetHeight;
-            state.dragGhost.style.left = (pos.x - ghostW / 2) + 'px';
-            state.dragGhost.style.top = (pos.y - ghostH * 0.7) + 'px';
+            state.dragGhost.style.left = pos.x + 'px';
+            state.dragGhost.style.top = pos.y + 'px';
         }
-
-        // Update curved trail
-        updateDragTrail(pos);
-
-        // Check proximity to drop zone
         checkDropZoneProximity(pos);
     }
 
     function onDragEnd(e) {
         if (!state.isDragging || !state.currentDrag) return;
-
-        const pos = e.changedTouches
-            ? { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY }
-            : { x: e.clientX, y: e.clientY };
+        const pos = e.changedTouches ? { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY } : { x: e.clientX, y: e.clientY };
 
         const matchedZone = findMatchingDropZone(pos);
-
         if (matchedZone) {
             placeSticker(state.currentDrag, matchedZone);
         } else {
             returnToTray();
         }
-
         cleanupDrag();
     }
 
-    function createDragGhost(stickerData, pos) {
+    function createTweezers(stickerData, pos) {
         const ghost = document.createElement('div');
-        ghost.className = 'drag-ghost';
-        const roomRect = elRoomWrapper.getBoundingClientRect();
-        const ghostW = (stickerData.target.w / 100) * roomRect.width * 1.1;
-        const ghostH = (stickerData.target.h / 100) * roomRect.height * 1.1;
-        ghost.style.width = Math.max(ghostW, 60) + 'px';
-        ghost.style.height = Math.max(ghostH, 60) + 'px';
-        ghost.style.left = (pos.x - ghostW / 2) + 'px';
-        ghost.style.top = (pos.y - ghostH * 0.7) + 'px';
-
+        ghost.className = 'tweezers-drag';
+        ghost.style.cssText = 'position:fixed; pointer-events:none; z-index:9999; display:flex; flex-direction:column; align-items:center; transform:translate(-50%, -80%);';
+        
         const img = document.createElement('img');
         img.src = getCleanSrc(stickerData.id);
-        img.alt = stickerData.name;
-        img.draggable = false;
+        img.style.maxHeight = '120px';
+        img.style.filter = 'drop-shadow(2px 5px 5px rgba(0,0,0,0.3))';
         ghost.appendChild(img);
 
+        const icon = document.createElement('div');
+        icon.innerHTML = '🥢';
+        icon.style.fontSize = '60px';
+        icon.style.marginTop = '-30px';
+        icon.style.transform = 'rotate(45deg)';
+        ghost.appendChild(icon);
+
+        ghost.style.left = pos.x + 'px';
+        ghost.style.top = pos.y + 'px';
         document.body.appendChild(ghost);
         state.dragGhost = ghost;
-    }
-
-    // Curved trail like in the reference game
-    function createDragTrail() {
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.classList.add('drag-trail');
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', '');
-        svg.appendChild(path);
-        document.body.appendChild(svg);
-        state.dragTrailSvg = svg;
-    }
-
-    function updateDragTrail(pos) {
-        if (!state.dragTrailSvg) return;
-        const path = state.dragTrailSvg.querySelector('path');
-        if (!path) return;
-
-        const sx = state.dragStartPos.x;
-        const sy = state.dragStartPos.y;
-        const ex = pos.x;
-        const ey = pos.y;
-
-        // Create a smooth cubic bezier curve
-        const midY = (sy + ey) / 2;
-        const cpx1 = sx + (ex - sx) * 0.1;
-        const cpy1 = sy - Math.abs(ey - sy) * 0.15;
-        const cpx2 = ex - (ex - sx) * 0.1;
-        const cpy2 = ey + Math.abs(ey - sy) * 0.1;
-
-        const d = `M ${sx} ${sy} C ${cpx1} ${cpy1}, ${cpx2} ${cpy2}, ${ex} ${ey}`;
-        path.setAttribute('d', d);
     }
 
     function checkDropZoneProximity(pos) {
@@ -542,12 +561,7 @@
             state.dragGhost.remove();
             state.dragGhost = null;
         }
-        if (state.dragTrailSvg) {
-            state.dragTrailSvg.remove();
-            state.dragTrailSvg = null;
-        }
         $$('.drop-zone.highlight').forEach((z) => z.classList.remove('highlight'));
-
         state.isDragging = false;
         state.currentDrag = null;
     }
