@@ -52,7 +52,7 @@ export default function DraggableSticker({ id, source, initialX, initialY, initi
       isDragging.value = true;
       savedTranslateX.value = translateX.value;
       savedTranslateY.value = translateY.value;
-      if (onSelect) runOnJS(onSelect)(id);
+      if (onSelect) runOnJS(onSelect)();
     })
     .onUpdate((event) => {
       translateX.value = savedTranslateX.value + event.translationX;

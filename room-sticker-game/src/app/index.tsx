@@ -2,16 +2,50 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import AdminMode from '../components/AdminMode';
 import UserMode from '../components/UserMode';
+import { LevelId } from '../constants/levels';
 
 export default function MainMenu() {
-  const [mode, setMode] = useState<'menu' | 'admin' | 'user'>('menu');
+  const [mode, setMode] = useState<'menu' | 'admin' | 'level-select' | 'playing'>('menu');
+  const [selectedLevelId, setSelectedLevelId] = useState<LevelId | null>(null);
 
   if (mode === 'admin') {
     return <AdminMode onBack={() => setMode('menu')} />;
   }
 
-  if (mode === 'user') {
-    return <UserMode onBack={() => setMode('menu')} />;
+  if (mode === 'playing' && selectedLevelId) {
+    return <UserMode levelId={selectedLevelId} onBack={() => setMode('level-select')} />;
+  }
+
+  if (mode === 'level-select') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.navbar}>
+          <TouchableOpacity style={styles.btnNav} onPress={() => setMode('menu')}>
+            <Text style={styles.btnTextNav}>← Back to Menu</Text>
+          </TouchableOpacity>
+          <Text style={styles.navTitle}>Select Level</Text>
+          <View style={{ width: 60 }} />
+        </View>
+
+        <View style={styles.menuContainer}>
+          <TouchableOpacity
+            style={[styles.btn, styles.btnLevel]}
+            onPress={() => { setSelectedLevelId('level1'); setMode('playing'); }}
+          >
+            <Text style={styles.btnText}>Level 1</Text>
+            <Text style={styles.btnSub}>Play the first level</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.btn, styles.btnLevel]}
+            onPress={() => { setSelectedLevelId('level2'); setMode('playing'); }}
+          >
+            <Text style={styles.btnText}>Level 2</Text>
+            <Text style={styles.btnSub}>Play the second level</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
   }
 
   return (
@@ -27,7 +61,7 @@ export default function MainMenu() {
           <Text style={styles.btnSub}>Create new levels (Drag & Drop)</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.btn, styles.btnUser]} onPress={() => setMode('user')}>
+        <TouchableOpacity style={[styles.btn, styles.btnUser]} onPress={() => setMode('level-select')}>
           <Text style={styles.btnText}>User Mode</Text>
           <Text style={styles.btnSub}>Play the levels</Text>
         </TouchableOpacity>
@@ -77,6 +111,9 @@ const styles = StyleSheet.create({
   btnUser: {
     backgroundColor: '#10b981',
   },
+  btnLevel: {
+    backgroundColor: '#8b5cf6',
+  },
   btnText: {
     color: '#fff',
     fontSize: 24,
@@ -86,5 +123,25 @@ const styles = StyleSheet.create({
   btnSub: {
     color: 'rgba(255,255,255,0.8)',
     fontSize: 14,
-  }
+  },
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    backgroundColor: '#1e1e1e',
+    height: 70,
+  },
+  btnNav: {
+    padding: 8,
+  },
+  btnTextNav: {
+    color: '#ccc',
+    fontSize: 16,
+  },
+  navTitle: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
