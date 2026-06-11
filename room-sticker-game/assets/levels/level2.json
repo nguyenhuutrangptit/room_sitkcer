@@ -1,0 +1,330 @@
+{
+  "room": "level2",
+  "bgImage": "assets/levels/level2/room/room_bare.png",
+  "bgSize": {
+    "width": 611,
+    "height": 802
+  },
+  "items": [
+    {
+      "id": "sticker_013",
+      "uri": "assets/levels/level2/stickers/sticker_013.png",
+      "normX": 0.5499,
+      "normY": 0.8342,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_016",
+      "uri": "assets/levels/level2/stickers/sticker_016.png",
+      "normX": 0.6702,
+      "normY": 0.2643,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_021",
+      "uri": "assets/levels/level2/stickers/sticker_021.png",
+      "normX": 0.6751,
+      "normY": 0.2718,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_023",
+      "uri": "assets/levels/level2/stickers/sticker_023.png",
+      "normX": 0.6776,
+      "normY": 0.2756,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_024",
+      "uri": "assets/levels/level2/stickers/sticker_024.png",
+      "normX": 0.6784,
+      "normY": 0.283,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_026",
+      "uri": "assets/levels/level2/stickers/sticker_026.png",
+      "normX": 0.5123,
+      "normY": 0.1983,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_028",
+      "uri": "assets/levels/level2/stickers/sticker_028.png",
+      "normX": 0.7005,
+      "normY": 0.265,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_036",
+      "uri": "assets/levels/level2/stickers/sticker_036.png",
+      "normX": 0.5082,
+      "normY": 0.2076,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_037",
+      "uri": "assets/levels/level2/stickers/sticker_037.png",
+      "normX": 0.6817,
+      "normY": 0.2606,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_042",
+      "uri": "assets/levels/level2/stickers/sticker_042.png",
+      "normX": 0.3347,
+      "normY": 0.6833,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_043",
+      "uri": "assets/levels/level2/stickers/sticker_043.png",
+      "normX": 0.5172,
+      "normY": 0.1839,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_046",
+      "uri": "assets/levels/level2/stickers/sticker_046.png",
+      "normX": 0.5131,
+      "normY": 0.197,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_056",
+      "uri": "assets/levels/level2/stickers/sticker_056.png",
+      "normX": 0.6817,
+      "normY": 0.2687,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_058",
+      "uri": "assets/levels/level2/stickers/sticker_058.png",
+      "normX": 0.536,
+      "normY": 0.8354,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_060",
+      "uri": "assets/levels/level2/stickers/sticker_060.png",
+      "normX": 0.5352,
+      "normY": 0.831,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_062",
+      "uri": "assets/levels/level2/stickers/sticker_062.png",
+      "normX": 0.5352,
+      "normY": 0.8323,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_066",
+      "uri": "assets/levels/level2/stickers/sticker_066.png",
+      "normX": 0.5376,
+      "normY": 0.8479,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_068",
+      "uri": "assets/levels/level2/stickers/sticker_068.png",
+      "normX": 0.5376,
+      "normY": 0.846,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_069",
+      "uri": "assets/levels/level2/stickers/sticker_069.png",
+      "normX": 0.5106,
+      "normY": 0.1914,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_075",
+      "uri": "assets/levels/level2/stickers/sticker_075.png",
+      "normX": 0.7422,
+      "normY": 0.1291,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_077",
+      "uri": "assets/levels/level2/stickers/sticker_077.png",
+      "normX": 0.5065,
+      "normY": 0.197,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_079",
+      "uri": "assets/levels/level2/stickers/sticker_079.png",
+      "normX": 0.5098,
+      "normY": 0.1951,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_083",
+      "uri": "assets/levels/level2/stickers/sticker_083.png",
+      "normX": 0.5049,
+      "normY": 0.1883,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_084",
+      "uri": "assets/levels/level2/stickers/sticker_084.png",
+      "normX": 0.5115,
+      "normY": 0.1958,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_085",
+      "uri": "assets/levels/level2/stickers/sticker_085.png",
+      "normX": 0.6866,
+      "normY": 0.2706,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_088",
+      "uri": "assets/levels/level2/stickers/sticker_088.png",
+      "normX": 0.5172,
+      "normY": 0.1951,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_089",
+      "uri": "assets/levels/level2/stickers/sticker_089.png",
+      "normX": 0.4918,
+      "normY": 0.0667,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_090",
+      "uri": "assets/levels/level2/stickers/sticker_090.png",
+      "normX": 0.5106,
+      "normY": 0.1945,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_092",
+      "uri": "assets/levels/level2/stickers/sticker_092.png",
+      "normX": 0.5131,
+      "normY": 0.192,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_093",
+      "uri": "assets/levels/level2/stickers/sticker_093.png",
+      "normX": 0.518,
+      "normY": 0.192,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_095",
+      "uri": "assets/levels/level2/stickers/sticker_095.png",
+      "normX": 0.6809,
+      "normY": 0.2687,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_097",
+      "uri": "assets/levels/level2/stickers/sticker_097.png",
+      "normX": 0.6718,
+      "normY": 0.2637,
+      "scale": 1.0,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    }
+  ]
+}
