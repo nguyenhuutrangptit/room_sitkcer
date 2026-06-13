@@ -1,0 +1,88 @@
+{
+  "room": "level1",
+  "levelId": "level1",
+  "bgImage": 9,
+  "bgSize": {
+    "width": 557,
+    "height": 634
+  },
+  "items": [
+    {
+      "id": "sticker_073",
+      "uid": "loaded_0",
+      "uri": 83,
+      "normX": 0.11087486864592877,
+      "normY": 0.32660699272021426,
+      "scale": 1.7000000000000006,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_071",
+      "uid": "loaded_1",
+      "uri": 81,
+      "normX": 0.5000239045263312,
+      "normY": 0.7392607026699773,
+      "scale": 2.200000000000001,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 2
+    },
+    {
+      "id": "sticker_038",
+      "uid": "loaded_2",
+      "uri": 48,
+      "normX": 0.12027693706968957,
+      "normY": 0.460905418713343,
+      "scale": 1,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 50
+    },
+    {
+      "id": "sticker_021",
+      "uid": "loaded_3",
+      "uri": 31,
+      "normX": 0.8498040625059572,
+      "normY": 0.43361952396076076,
+      "scale": 4.300000000000002,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 5
+    },
+    {
+      "id": "sticker_020",
+      "uid": "loaded_4",
+      "uri": 30,
+      "normX": 0.20531590654132334,
+      "normY": 0.5013357925470934,
+      "scale": 2.9742187500000004,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 6
+    },
+    {
+      "id": "sticker_001",
+      "uid": "loaded_5",
+      "uri": 11,
+      "normX": 0.4729713848581754,
+      "normY": 0.3122614417712063,
+      "scale": 5,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 1
+    },
+    {
+      "id": "sticker_034",
+      "uid": "loaded_6",
+      "uri": 44,
+      "normX": 0.6636596760481029,
+      "normY": 0.6332978472301846,
+      "scale": 3.6000000000000023,
+      "rotation": 0,
+      "rotation3D": 0,
+      "layer": 21
+    }
+  ]
+}

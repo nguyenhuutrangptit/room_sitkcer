@@ -6,48 +6,175 @@ import level2Data from '../../assets/levels/level2.json';
 import level1Room from '../../assets/levels/level1/room/room_bare.png';
 import level2Room from '../../assets/levels/level2/room/room_bare.png';
 
+import level1Stickersticker001 from '../../assets/levels/level1/stickers/sticker_001.png';
+import level1Stickersticker002 from '../../assets/levels/level1/stickers/sticker_002.png';
+import level1Stickersticker003 from '../../assets/levels/level1/stickers/sticker_003.png';
 import level1Stickersticker004 from '../../assets/levels/level1/stickers/sticker_004.png';
+import level1Stickersticker005 from '../../assets/levels/level1/stickers/sticker_005.png';
 import level1Stickersticker006 from '../../assets/levels/level1/stickers/sticker_006.png';
+import level1Stickersticker007 from '../../assets/levels/level1/stickers/sticker_007.png';
+import level1Stickersticker008 from '../../assets/levels/level1/stickers/sticker_008.png';
+import level1Stickersticker009 from '../../assets/levels/level1/stickers/sticker_009.png';
+import level1Stickersticker010 from '../../assets/levels/level1/stickers/sticker_010.png';
+import level1Stickersticker011 from '../../assets/levels/level1/stickers/sticker_011.png';
 import level1Stickersticker012 from '../../assets/levels/level1/stickers/sticker_012.png';
+import level1Stickersticker013 from '../../assets/levels/level1/stickers/sticker_013.png';
+import level1Stickersticker014 from '../../assets/levels/level1/stickers/sticker_014.png';
+import level1Stickersticker015 from '../../assets/levels/level1/stickers/sticker_015.png';
+import level1Stickersticker016 from '../../assets/levels/level1/stickers/sticker_016.png';
+import level1Stickersticker017 from '../../assets/levels/level1/stickers/sticker_017.png';
 import level1Stickersticker018 from '../../assets/levels/level1/stickers/sticker_018.png';
+import level1Stickersticker019 from '../../assets/levels/level1/stickers/sticker_019.png';
+import level1Stickersticker020 from '../../assets/levels/level1/stickers/sticker_020.png';
+import level1Stickersticker021 from '../../assets/levels/level1/stickers/sticker_021.png';
+import level1Stickersticker022 from '../../assets/levels/level1/stickers/sticker_022.png';
+import level1Stickersticker023 from '../../assets/levels/level1/stickers/sticker_023.png';
+import level1Stickersticker024 from '../../assets/levels/level1/stickers/sticker_024.png';
 import level1Stickersticker025 from '../../assets/levels/level1/stickers/sticker_025.png';
+import level1Stickersticker026 from '../../assets/levels/level1/stickers/sticker_026.png';
+import level1Stickersticker027 from '../../assets/levels/level1/stickers/sticker_027.png';
+import level1Stickersticker028 from '../../assets/levels/level1/stickers/sticker_028.png';
+import level1Stickersticker029 from '../../assets/levels/level1/stickers/sticker_029.png';
+import level1Stickersticker030 from '../../assets/levels/level1/stickers/sticker_030.png';
+import level1Stickersticker031 from '../../assets/levels/level1/stickers/sticker_031.png';
+import level1Stickersticker032 from '../../assets/levels/level1/stickers/sticker_032.png';
 import level1Stickersticker033 from '../../assets/levels/level1/stickers/sticker_033.png';
+import level1Stickersticker034 from '../../assets/levels/level1/stickers/sticker_034.png';
+import level1Stickersticker035 from '../../assets/levels/level1/stickers/sticker_035.png';
+import level1Stickersticker036 from '../../assets/levels/level1/stickers/sticker_036.png';
+import level1Stickersticker037 from '../../assets/levels/level1/stickers/sticker_037.png';
+import level1Stickersticker038 from '../../assets/levels/level1/stickers/sticker_038.png';
+import level1Stickersticker039 from '../../assets/levels/level1/stickers/sticker_039.png';
+import level1Stickersticker040 from '../../assets/levels/level1/stickers/sticker_040.png';
+import level1Stickersticker041 from '../../assets/levels/level1/stickers/sticker_041.png';
+import level1Stickersticker042 from '../../assets/levels/level1/stickers/sticker_042.png';
+import level1Stickersticker043 from '../../assets/levels/level1/stickers/sticker_043.png';
+import level1Stickersticker044 from '../../assets/levels/level1/stickers/sticker_044.png';
+import level1Stickersticker045 from '../../assets/levels/level1/stickers/sticker_045.png';
+import level1Stickersticker046 from '../../assets/levels/level1/stickers/sticker_046.png';
+import level1Stickersticker047 from '../../assets/levels/level1/stickers/sticker_047.png';
+import level1Stickersticker048 from '../../assets/levels/level1/stickers/sticker_048.png';
 import level1Stickersticker049 from '../../assets/levels/level1/stickers/sticker_049.png';
+import level1Stickersticker050 from '../../assets/levels/level1/stickers/sticker_050.png';
+import level1Stickersticker051 from '../../assets/levels/level1/stickers/sticker_051.png';
 import level1Stickersticker052 from '../../assets/levels/level1/stickers/sticker_052.png';
+import level1Stickersticker053 from '../../assets/levels/level1/stickers/sticker_053.png';
+import level1Stickersticker054 from '../../assets/levels/level1/stickers/sticker_054.png';
+import level1Stickersticker055 from '../../assets/levels/level1/stickers/sticker_055.png';
+import level1Stickersticker056 from '../../assets/levels/level1/stickers/sticker_056.png';
+import level1Stickersticker057 from '../../assets/levels/level1/stickers/sticker_057.png';
+import level1Stickersticker058 from '../../assets/levels/level1/stickers/sticker_058.png';
+import level1Stickersticker059 from '../../assets/levels/level1/stickers/sticker_059.png';
+import level1Stickersticker060 from '../../assets/levels/level1/stickers/sticker_060.png';
+import level1Stickersticker061 from '../../assets/levels/level1/stickers/sticker_061.png';
 import level1Stickersticker062 from '../../assets/levels/level1/stickers/sticker_062.png';
+import level1Stickersticker063 from '../../assets/levels/level1/stickers/sticker_063.png';
+import level1Stickersticker064 from '../../assets/levels/level1/stickers/sticker_064.png';
+import level1Stickersticker065 from '../../assets/levels/level1/stickers/sticker_065.png';
+import level1Stickersticker066 from '../../assets/levels/level1/stickers/sticker_066.png';
+import level1Stickersticker067 from '../../assets/levels/level1/stickers/sticker_067.png';
+import level1Stickersticker068 from '../../assets/levels/level1/stickers/sticker_068.png';
 import level1Stickersticker069 from '../../assets/levels/level1/stickers/sticker_069.png';
+import level1Stickersticker070 from '../../assets/levels/level1/stickers/sticker_070.png';
+import level1Stickersticker071 from '../../assets/levels/level1/stickers/sticker_071.png';
 import level1Stickersticker072 from '../../assets/levels/level1/stickers/sticker_072.png';
+import level1Stickersticker073 from '../../assets/levels/level1/stickers/sticker_073.png';
+import level2Stickersticker001 from '../../assets/levels/level2/stickers/sticker_001.png';
+import level2Stickersticker002 from '../../assets/levels/level2/stickers/sticker_002.png';
+import level2Stickersticker003 from '../../assets/levels/level2/stickers/sticker_003.png';
+import level2Stickersticker004 from '../../assets/levels/level2/stickers/sticker_004.png';
+import level2Stickersticker005 from '../../assets/levels/level2/stickers/sticker_005.png';
+import level2Stickersticker006 from '../../assets/levels/level2/stickers/sticker_006.png';
+import level2Stickersticker007 from '../../assets/levels/level2/stickers/sticker_007.png';
+import level2Stickersticker008 from '../../assets/levels/level2/stickers/sticker_008.png';
+import level2Stickersticker009 from '../../assets/levels/level2/stickers/sticker_009.png';
+import level2Stickersticker010 from '../../assets/levels/level2/stickers/sticker_010.png';
+import level2Stickersticker011 from '../../assets/levels/level2/stickers/sticker_011.png';
+import level2Stickersticker012 from '../../assets/levels/level2/stickers/sticker_012.png';
 import level2Stickersticker013 from '../../assets/levels/level2/stickers/sticker_013.png';
+import level2Stickersticker014 from '../../assets/levels/level2/stickers/sticker_014.png';
+import level2Stickersticker015 from '../../assets/levels/level2/stickers/sticker_015.png';
 import level2Stickersticker016 from '../../assets/levels/level2/stickers/sticker_016.png';
+import level2Stickersticker017 from '../../assets/levels/level2/stickers/sticker_017.png';
+import level2Stickersticker018 from '../../assets/levels/level2/stickers/sticker_018.png';
+import level2Stickersticker019 from '../../assets/levels/level2/stickers/sticker_019.png';
+import level2Stickersticker020 from '../../assets/levels/level2/stickers/sticker_020.png';
 import level2Stickersticker021 from '../../assets/levels/level2/stickers/sticker_021.png';
+import level2Stickersticker022 from '../../assets/levels/level2/stickers/sticker_022.png';
 import level2Stickersticker023 from '../../assets/levels/level2/stickers/sticker_023.png';
 import level2Stickersticker024 from '../../assets/levels/level2/stickers/sticker_024.png';
+import level2Stickersticker025 from '../../assets/levels/level2/stickers/sticker_025.png';
 import level2Stickersticker026 from '../../assets/levels/level2/stickers/sticker_026.png';
+import level2Stickersticker027 from '../../assets/levels/level2/stickers/sticker_027.png';
 import level2Stickersticker028 from '../../assets/levels/level2/stickers/sticker_028.png';
+import level2Stickersticker029 from '../../assets/levels/level2/stickers/sticker_029.png';
+import level2Stickersticker030 from '../../assets/levels/level2/stickers/sticker_030.png';
+import level2Stickersticker031 from '../../assets/levels/level2/stickers/sticker_031.png';
+import level2Stickersticker032 from '../../assets/levels/level2/stickers/sticker_032.png';
+import level2Stickersticker033 from '../../assets/levels/level2/stickers/sticker_033.png';
+import level2Stickersticker034 from '../../assets/levels/level2/stickers/sticker_034.png';
+import level2Stickersticker035 from '../../assets/levels/level2/stickers/sticker_035.png';
 import level2Stickersticker036 from '../../assets/levels/level2/stickers/sticker_036.png';
 import level2Stickersticker037 from '../../assets/levels/level2/stickers/sticker_037.png';
+import level2Stickersticker038 from '../../assets/levels/level2/stickers/sticker_038.png';
+import level2Stickersticker039 from '../../assets/levels/level2/stickers/sticker_039.png';
+import level2Stickersticker040 from '../../assets/levels/level2/stickers/sticker_040.png';
+import level2Stickersticker041 from '../../assets/levels/level2/stickers/sticker_041.png';
 import level2Stickersticker042 from '../../assets/levels/level2/stickers/sticker_042.png';
 import level2Stickersticker043 from '../../assets/levels/level2/stickers/sticker_043.png';
+import level2Stickersticker044 from '../../assets/levels/level2/stickers/sticker_044.png';
+import level2Stickersticker045 from '../../assets/levels/level2/stickers/sticker_045.png';
 import level2Stickersticker046 from '../../assets/levels/level2/stickers/sticker_046.png';
+import level2Stickersticker047 from '../../assets/levels/level2/stickers/sticker_047.png';
+import level2Stickersticker048 from '../../assets/levels/level2/stickers/sticker_048.png';
+import level2Stickersticker049 from '../../assets/levels/level2/stickers/sticker_049.png';
+import level2Stickersticker050 from '../../assets/levels/level2/stickers/sticker_050.png';
+import level2Stickersticker051 from '../../assets/levels/level2/stickers/sticker_051.png';
+import level2Stickersticker052 from '../../assets/levels/level2/stickers/sticker_052.png';
+import level2Stickersticker053 from '../../assets/levels/level2/stickers/sticker_053.png';
+import level2Stickersticker054 from '../../assets/levels/level2/stickers/sticker_054.png';
+import level2Stickersticker055 from '../../assets/levels/level2/stickers/sticker_055.png';
 import level2Stickersticker056 from '../../assets/levels/level2/stickers/sticker_056.png';
+import level2Stickersticker057 from '../../assets/levels/level2/stickers/sticker_057.png';
 import level2Stickersticker058 from '../../assets/levels/level2/stickers/sticker_058.png';
+import level2Stickersticker059 from '../../assets/levels/level2/stickers/sticker_059.png';
 import level2Stickersticker060 from '../../assets/levels/level2/stickers/sticker_060.png';
+import level2Stickersticker061 from '../../assets/levels/level2/stickers/sticker_061.png';
 import level2Stickersticker062 from '../../assets/levels/level2/stickers/sticker_062.png';
+import level2Stickersticker063 from '../../assets/levels/level2/stickers/sticker_063.png';
+import level2Stickersticker064 from '../../assets/levels/level2/stickers/sticker_064.png';
+import level2Stickersticker065 from '../../assets/levels/level2/stickers/sticker_065.png';
 import level2Stickersticker066 from '../../assets/levels/level2/stickers/sticker_066.png';
+import level2Stickersticker067 from '../../assets/levels/level2/stickers/sticker_067.png';
 import level2Stickersticker068 from '../../assets/levels/level2/stickers/sticker_068.png';
 import level2Stickersticker069 from '../../assets/levels/level2/stickers/sticker_069.png';
+import level2Stickersticker070 from '../../assets/levels/level2/stickers/sticker_070.png';
+import level2Stickersticker071 from '../../assets/levels/level2/stickers/sticker_071.png';
+import level2Stickersticker072 from '../../assets/levels/level2/stickers/sticker_072.png';
+import level2Stickersticker073 from '../../assets/levels/level2/stickers/sticker_073.png';
+import level2Stickersticker074 from '../../assets/levels/level2/stickers/sticker_074.png';
 import level2Stickersticker075 from '../../assets/levels/level2/stickers/sticker_075.png';
+import level2Stickersticker076 from '../../assets/levels/level2/stickers/sticker_076.png';
 import level2Stickersticker077 from '../../assets/levels/level2/stickers/sticker_077.png';
+import level2Stickersticker078 from '../../assets/levels/level2/stickers/sticker_078.png';
 import level2Stickersticker079 from '../../assets/levels/level2/stickers/sticker_079.png';
+import level2Stickersticker080 from '../../assets/levels/level2/stickers/sticker_080.png';
+import level2Stickersticker081 from '../../assets/levels/level2/stickers/sticker_081.png';
+import level2Stickersticker082 from '../../assets/levels/level2/stickers/sticker_082.png';
 import level2Stickersticker083 from '../../assets/levels/level2/stickers/sticker_083.png';
 import level2Stickersticker084 from '../../assets/levels/level2/stickers/sticker_084.png';
 import level2Stickersticker085 from '../../assets/levels/level2/stickers/sticker_085.png';
+import level2Stickersticker086 from '../../assets/levels/level2/stickers/sticker_086.png';
+import level2Stickersticker087 from '../../assets/levels/level2/stickers/sticker_087.png';
 import level2Stickersticker088 from '../../assets/levels/level2/stickers/sticker_088.png';
 import level2Stickersticker089 from '../../assets/levels/level2/stickers/sticker_089.png';
 import level2Stickersticker090 from '../../assets/levels/level2/stickers/sticker_090.png';
+import level2Stickersticker091 from '../../assets/levels/level2/stickers/sticker_091.png';
 import level2Stickersticker092 from '../../assets/levels/level2/stickers/sticker_092.png';
 import level2Stickersticker093 from '../../assets/levels/level2/stickers/sticker_093.png';
+import level2Stickersticker094 from '../../assets/levels/level2/stickers/sticker_094.png';
 import level2Stickersticker095 from '../../assets/levels/level2/stickers/sticker_095.png';
+import level2Stickersticker096 from '../../assets/levels/level2/stickers/sticker_096.png';
 import level2Stickersticker097 from '../../assets/levels/level2/stickers/sticker_097.png';
 
 export type LevelId = 'level1' | 'level2';
@@ -67,17 +194,79 @@ export const LEVELS: Level[] = [
     data: level1Data,
     roomImage: level1Room,
     stickerImages: {
+    'sticker_001': level1Stickersticker001,
+    'sticker_002': level1Stickersticker002,
+    'sticker_003': level1Stickersticker003,
     'sticker_004': level1Stickersticker004,
+    'sticker_005': level1Stickersticker005,
     'sticker_006': level1Stickersticker006,
+    'sticker_007': level1Stickersticker007,
+    'sticker_008': level1Stickersticker008,
+    'sticker_009': level1Stickersticker009,
+    'sticker_010': level1Stickersticker010,
+    'sticker_011': level1Stickersticker011,
     'sticker_012': level1Stickersticker012,
+    'sticker_013': level1Stickersticker013,
+    'sticker_014': level1Stickersticker014,
+    'sticker_015': level1Stickersticker015,
+    'sticker_016': level1Stickersticker016,
+    'sticker_017': level1Stickersticker017,
     'sticker_018': level1Stickersticker018,
+    'sticker_019': level1Stickersticker019,
+    'sticker_020': level1Stickersticker020,
+    'sticker_021': level1Stickersticker021,
+    'sticker_022': level1Stickersticker022,
+    'sticker_023': level1Stickersticker023,
+    'sticker_024': level1Stickersticker024,
     'sticker_025': level1Stickersticker025,
+    'sticker_026': level1Stickersticker026,
+    'sticker_027': level1Stickersticker027,
+    'sticker_028': level1Stickersticker028,
+    'sticker_029': level1Stickersticker029,
+    'sticker_030': level1Stickersticker030,
+    'sticker_031': level1Stickersticker031,
+    'sticker_032': level1Stickersticker032,
     'sticker_033': level1Stickersticker033,
+    'sticker_034': level1Stickersticker034,
+    'sticker_035': level1Stickersticker035,
+    'sticker_036': level1Stickersticker036,
+    'sticker_037': level1Stickersticker037,
+    'sticker_038': level1Stickersticker038,
+    'sticker_039': level1Stickersticker039,
+    'sticker_040': level1Stickersticker040,
+    'sticker_041': level1Stickersticker041,
+    'sticker_042': level1Stickersticker042,
+    'sticker_043': level1Stickersticker043,
+    'sticker_044': level1Stickersticker044,
+    'sticker_045': level1Stickersticker045,
+    'sticker_046': level1Stickersticker046,
+    'sticker_047': level1Stickersticker047,
+    'sticker_048': level1Stickersticker048,
     'sticker_049': level1Stickersticker049,
+    'sticker_050': level1Stickersticker050,
+    'sticker_051': level1Stickersticker051,
     'sticker_052': level1Stickersticker052,
+    'sticker_053': level1Stickersticker053,
+    'sticker_054': level1Stickersticker054,
+    'sticker_055': level1Stickersticker055,
+    'sticker_056': level1Stickersticker056,
+    'sticker_057': level1Stickersticker057,
+    'sticker_058': level1Stickersticker058,
+    'sticker_059': level1Stickersticker059,
+    'sticker_060': level1Stickersticker060,
+    'sticker_061': level1Stickersticker061,
     'sticker_062': level1Stickersticker062,
+    'sticker_063': level1Stickersticker063,
+    'sticker_064': level1Stickersticker064,
+    'sticker_065': level1Stickersticker065,
+    'sticker_066': level1Stickersticker066,
+    'sticker_067': level1Stickersticker067,
+    'sticker_068': level1Stickersticker068,
     'sticker_069': level1Stickersticker069,
+    'sticker_070': level1Stickersticker070,
+    'sticker_071': level1Stickersticker071,
     'sticker_072': level1Stickersticker072,
+    'sticker_073': level1Stickersticker073,
     },
   },
   {
@@ -86,37 +275,102 @@ export const LEVELS: Level[] = [
     data: level2Data,
     roomImage: level2Room,
     stickerImages: {
+    'sticker_001': level2Stickersticker001,
+    'sticker_002': level2Stickersticker002,
+    'sticker_003': level2Stickersticker003,
+    'sticker_004': level2Stickersticker004,
+    'sticker_005': level2Stickersticker005,
+    'sticker_006': level2Stickersticker006,
+    'sticker_007': level2Stickersticker007,
+    'sticker_008': level2Stickersticker008,
+    'sticker_009': level2Stickersticker009,
+    'sticker_010': level2Stickersticker010,
+    'sticker_011': level2Stickersticker011,
+    'sticker_012': level2Stickersticker012,
     'sticker_013': level2Stickersticker013,
+    'sticker_014': level2Stickersticker014,
+    'sticker_015': level2Stickersticker015,
     'sticker_016': level2Stickersticker016,
+    'sticker_017': level2Stickersticker017,
+    'sticker_018': level2Stickersticker018,
+    'sticker_019': level2Stickersticker019,
+    'sticker_020': level2Stickersticker020,
     'sticker_021': level2Stickersticker021,
+    'sticker_022': level2Stickersticker022,
     'sticker_023': level2Stickersticker023,
     'sticker_024': level2Stickersticker024,
+    'sticker_025': level2Stickersticker025,
     'sticker_026': level2Stickersticker026,
+    'sticker_027': level2Stickersticker027,
     'sticker_028': level2Stickersticker028,
+    'sticker_029': level2Stickersticker029,
+    'sticker_030': level2Stickersticker030,
+    'sticker_031': level2Stickersticker031,
+    'sticker_032': level2Stickersticker032,
+    'sticker_033': level2Stickersticker033,
+    'sticker_034': level2Stickersticker034,
+    'sticker_035': level2Stickersticker035,
     'sticker_036': level2Stickersticker036,
     'sticker_037': level2Stickersticker037,
+    'sticker_038': level2Stickersticker038,
+    'sticker_039': level2Stickersticker039,
+    'sticker_040': level2Stickersticker040,
+    'sticker_041': level2Stickersticker041,
     'sticker_042': level2Stickersticker042,
     'sticker_043': level2Stickersticker043,
+    'sticker_044': level2Stickersticker044,
+    'sticker_045': level2Stickersticker045,
     'sticker_046': level2Stickersticker046,
+    'sticker_047': level2Stickersticker047,
+    'sticker_048': level2Stickersticker048,
+    'sticker_049': level2Stickersticker049,
+    'sticker_050': level2Stickersticker050,
+    'sticker_051': level2Stickersticker051,
+    'sticker_052': level2Stickersticker052,
+    'sticker_053': level2Stickersticker053,
+    'sticker_054': level2Stickersticker054,
+    'sticker_055': level2Stickersticker055,
     'sticker_056': level2Stickersticker056,
+    'sticker_057': level2Stickersticker057,
     'sticker_058': level2Stickersticker058,
+    'sticker_059': level2Stickersticker059,
     'sticker_060': level2Stickersticker060,
+    'sticker_061': level2Stickersticker061,
     'sticker_062': level2Stickersticker062,
+    'sticker_063': level2Stickersticker063,
+    'sticker_064': level2Stickersticker064,
+    'sticker_065': level2Stickersticker065,
     'sticker_066': level2Stickersticker066,
+    'sticker_067': level2Stickersticker067,
     'sticker_068': level2Stickersticker068,
     'sticker_069': level2Stickersticker069,
+    'sticker_070': level2Stickersticker070,
+    'sticker_071': level2Stickersticker071,
+    'sticker_072': level2Stickersticker072,
+    'sticker_073': level2Stickersticker073,
+    'sticker_074': level2Stickersticker074,
     'sticker_075': level2Stickersticker075,
+    'sticker_076': level2Stickersticker076,
     'sticker_077': level2Stickersticker077,
+    'sticker_078': level2Stickersticker078,
     'sticker_079': level2Stickersticker079,
+    'sticker_080': level2Stickersticker080,
+    'sticker_081': level2Stickersticker081,
+    'sticker_082': level2Stickersticker082,
     'sticker_083': level2Stickersticker083,
     'sticker_084': level2Stickersticker084,
     'sticker_085': level2Stickersticker085,
+    'sticker_086': level2Stickersticker086,
+    'sticker_087': level2Stickersticker087,
     'sticker_088': level2Stickersticker088,
     'sticker_089': level2Stickersticker089,
     'sticker_090': level2Stickersticker090,
+    'sticker_091': level2Stickersticker091,
     'sticker_092': level2Stickersticker092,
     'sticker_093': level2Stickersticker093,
+    'sticker_094': level2Stickersticker094,
     'sticker_095': level2Stickersticker095,
+    'sticker_096': level2Stickersticker096,
     'sticker_097': level2Stickersticker097,
     },
   },

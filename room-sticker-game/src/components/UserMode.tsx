@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Image, Alert, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Image, Alert, Dimensions, Platform } from 'react-native';
+import * as FileSystem from 'expo-file-system/legacy';
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import DraggableSticker from './DraggableSticker';
 import { calculateRenderBounds } from '../utils/layout';
 import { LevelId, getLevelById } from '../constants/levels';
+import { defaultLevelData, defaultStickerImages, defaultRoomImage, defaultLevelId } from '../constants/defaultLevel';
 
 type LevelData = {
   room: string;
@@ -22,6 +24,7 @@ type LevelData = {
 };
 
 type PlayItem = LevelData['items'][0] & {
+  uid: string;
   currentX: number;
   currentY: number;
   isSnapped: boolean;
@@ -72,49 +75,81 @@ export default function UserMode({ onBack, levelId }: { onBack: () => void; leve
   });
 
   useEffect(() => {
-    const level = getLevelById(levelId);
-    if (!level) {
-      Alert.alert("Error", "Level not found.");
-      return;
-    }
+    const initialize = async () => {
+      // Try to load the saved scene first. If none exists, fall back to the bundled default.
+      let savedData: any = null;
+      try {
+        let jsonString: string | null = null;
+        if (Platform.OS === 'web') {
+          jsonString = localStorage.getItem('levelData');
+        } else {
+          const fileUri = FileSystem.documentDirectory + 'levelData.json';
+          const fileInfo = await FileSystem.getInfoAsync(fileUri);
+          if (fileInfo.exists) {
+            jsonString = await FileSystem.readAsStringAsync(fileUri);
+          }
+        }
+        if (jsonString) {
+          savedData = JSON.parse(jsonString);
+        }
+      } catch (e) {
+        console.error("Failed to load saved level", e);
+      }
 
-    const data: LevelData = level.data;
-    if (data.items[0] && data.items[0].normX === undefined) {
-      Alert.alert("Outdated Config", "Please Clear All in AdminMode and recreate the level.");
-      return;
-    }
+      const fallbackData = defaultLevelData as any;
+      const activeData = savedData ?? fallbackData;
+      const targetLevelId: LevelId | undefined = activeData?.levelId ?? levelId ?? defaultLevelId;
+      const level = targetLevelId ? getLevelById(targetLevelId) : undefined;
 
-    setLevelData(data);
-    setStickerImages(level.stickerImages);
-    setRoomImage(level.roomImage);
-    
-    const cols = Math.max(1, Math.floor(winWidth / 90));
-    const rowsCount = Math.ceil(data.items.length / cols) || 1;
-    const calculatedTrayHeight = Math.max(90, rowsCount * 90 + 30);
-    setTrayHeight(calculatedTrayHeight);
-    setCanvasSize(prev => ({ ...prev, height: winHeight - 110 - calculatedTrayHeight }));
+      if (!level) {
+        Alert.alert("Error", "Level not found.");
+        return;
+      }
 
-    const activeItems = data.items.map((item: any, index: number) => {
-      const row = Math.floor(index / cols);
-      const itemsInThisRow = row === rowsCount - 1 ? (data.items.length - row * cols) : cols;
-      const startX = (winWidth - (itemsInThisRow * 90)) / 2;
-      const col = index % cols;
-      
-      const trayY = (winHeight - 110 - calculatedTrayHeight) + 15;
-      return {
-        ...item,
-        currentX: startX + col * 90 + 5,
-        currentY: trayY + row * 90,
-        isSnapped: false
-      };
-    });
-    setPlayItems(activeItems);
+      const data: LevelData = activeData ?? level.data;
+      if (data.items[0] && data.items[0].normX === undefined) {
+        Alert.alert("Outdated Config", "Please Clear All in AdminMode and recreate the level.");
+        return;
+      }
+
+      setLevelData(data);
+      // Prefer bundled module IDs: use the default sticker/room images when no saved
+      // scene exists, otherwise use the level's bundled mapping for the saved levelId.
+      const isSavedScene = !!savedData;
+      setStickerImages(isSavedScene ? level.stickerImages : defaultStickerImages);
+      setRoomImage(isSavedScene ? level.roomImage : defaultRoomImage);
+
+      const cols = Math.max(1, Math.floor(winWidth / 90));
+      const rowsCount = Math.ceil(data.items.length / cols) || 1;
+      const calculatedTrayHeight = Math.max(90, rowsCount * 90 + 30);
+      setTrayHeight(calculatedTrayHeight);
+      setCanvasSize(prev => ({ ...prev, height: winHeight - 110 - calculatedTrayHeight }));
+
+      const activeItems = data.items.map((item: any, index: number) => {
+        const row = Math.floor(index / cols);
+        const itemsInThisRow = row === rowsCount - 1 ? (data.items.length - row * cols) : cols;
+        const startX = (winWidth - (itemsInThisRow * 90)) / 2;
+        const col = index % cols;
+
+        const trayY = (winHeight - 110 - calculatedTrayHeight) + 15;
+        return {
+          ...item,
+          uid: item.uid ?? `${item.id}_${index}`,
+          currentX: startX + col * 90 + 5,
+          currentY: trayY + row * 90,
+          isSnapped: false
+        };
+      });
+      setPlayItems(activeItems);
+    };
+
+    initialize();
   }, [levelId, winWidth, winHeight]);
 
   const handleUpdatePosition = (id: string, screenX: number, screenY: number) => {
     setPlayItems(prev => {
       const newItems = prev.map(item => {
-        if (item.id === id) {
+        if (item.uid === id) {
           const { renderWidth, renderHeight, offsetX, offsetY } = calculateRenderBounds(canvasSize, levelData?.bgSize || null);
           const targetCenterX = offsetX + (item.normX * renderWidth);
           const targetCenterY = offsetY + (item.normY * renderHeight);
@@ -181,28 +216,29 @@ export default function UserMode({ onBack, levelId }: { onBack: () => void; leve
           )}
 
           {/* Ghost Images */}
-          {levelData.items.map(item => {
-             const playItem = playItems.find(p => p.id === item.id);
+          {levelData.items.map((item, idx) => {
+             const playItem = playItems[idx];
              const { renderWidth, renderHeight, offsetX, offsetY } = calculateRenderBounds(canvasSize, levelData.bgSize || null);
              const stickerSource = stickerImages[item.id];
-             return <GhostSticker key={`ghost_${item.id}`} item={item} playItem={playItem} renderWidth={renderWidth} renderHeight={renderHeight} offsetX={offsetX} offsetY={offsetY} source={stickerSource} />;
+             return <GhostSticker key={`ghost_${playItem?.uid ?? item.id}_${idx}`} item={item} playItem={playItem} renderWidth={renderWidth} renderHeight={renderHeight} offsetX={offsetX} offsetY={offsetY} source={stickerSource} />;
           })}
         </ImageBackground>
 
         {/* Draggable Stickers at root level of canvasContainer */}
         {[...playItems].sort((a, b) => (a.layer || 1) - (b.layer || 1)).map(item => {
           const { renderWidth } = calculateRenderBounds(canvasSize, levelData.bgSize || null);
-          const responsiveScale = item.scale * (renderWidth / 800);
+          const baseScale = renderWidth / 800;
           const stickerSource = stickerImages[item.id];
 
           return (
             <DraggableSticker
-              key={item.id}
-              id={item.id}
+              key={item.uid}
+              id={item.uid}
               source={stickerSource}
               initialX={item.currentX}
               initialY={item.currentY}
-              initialScale={responsiveScale}
+              scale={item.scale}
+              baseScale={baseScale}
               rotation={item.rotation}
               rotation3D={item.rotation3D}
               isSnapped={item.isSnapped}

@@ -8,7 +8,8 @@ type DraggableStickerProps = {
   source: any;
   initialX: number;
   initialY: number;
-  initialScale?: number;
+  scale?: number;
+  baseScale?: number;
   rotation?: number;
   rotation3D?: number;
   isSelected?: boolean;
@@ -18,33 +19,51 @@ type DraggableStickerProps = {
   onSelect?: () => void;
 };
 
-export default function DraggableSticker({ id, source, initialX, initialY, initialScale = 1.0, rotation = 0, rotation3D = 0, isSelected = false, isSnapped = false, onUpdatePosition, onUpdateScale, onSelect }: DraggableStickerProps) {
+export default function DraggableSticker({
+  id,
+  source,
+  initialX,
+  initialY,
+  scale: logicalScale = 1,
+  baseScale = 1,
+  rotation = 0,
+  rotation3D = 0,
+  isSelected = false,
+  isSnapped = false,
+  onUpdatePosition,
+  onUpdateScale,
+  onSelect,
+}: DraggableStickerProps) {
   const translateX = useSharedValue(initialX);
   const translateY = useSharedValue(initialY);
-  const scale = useSharedValue(initialScale);
-  const savedScale = useSharedValue(initialScale);
+  const displayScale = useSharedValue(logicalScale * baseScale);
+  const savedDisplayScale = useSharedValue(logicalScale * baseScale);
   const savedTranslateX = useSharedValue(initialX);
   const savedTranslateY = useSharedValue(initialY);
   const isDragging = useSharedValue(false);
 
+  // Keep the display scale in sync with the logical scale prop and base scale.
   useEffect(() => {
-    scale.value = initialScale;
-    savedScale.value = initialScale;
-  }, [initialScale]);
+    const newDisplayScale = logicalScale * baseScale;
+    displayScale.value = newDisplayScale;
+    savedDisplayScale.value = newDisplayScale;
+  }, [logicalScale, baseScale]);
 
   useEffect(() => {
     translateX.value = initialX;
     translateY.value = initialY;
+    savedTranslateX.value = initialX;
+    savedTranslateY.value = initialY;
   }, [initialX, initialY]);
 
   useEffect(() => {
     if (isSnapped) {
-      scale.value = withSequence(
-        withTiming(initialScale * 1.2, { duration: 200 }),
-        withTiming(initialScale, { duration: 800 })
+      displayScale.value = withSequence(
+        withTiming(logicalScale * baseScale * 1.2, { duration: 200 }),
+        withTiming(logicalScale * baseScale, { duration: 800 })
       );
     }
-  }, [isSnapped, initialScale]);
+  }, [isSnapped, logicalScale, baseScale]);
 
   const pan = Gesture.Pan()
     .enabled(!isSnapped)
@@ -64,16 +83,17 @@ export default function DraggableSticker({ id, source, initialX, initialY, initi
     });
 
   const pinch = Gesture.Pinch()
+    .onStart(() => {
+      savedDisplayScale.value = displayScale.value;
+    })
     .onUpdate((event) => {
-      scale.value = savedScale.value * event.scale;
+      displayScale.value = savedDisplayScale.value * event.scale;
     })
     .onEnd(() => {
-      savedScale.value = scale.value;
-    })
-    .runOnJS(true)
-    .onFinalize(() => {
+      savedDisplayScale.value = displayScale.value;
       if (onUpdateScale) {
-        onUpdateScale(id, scale.value);
+        const newLogicalScale = baseScale > 0 ? displayScale.value / baseScale : displayScale.value;
+        runOnJS(onUpdateScale)(id, newLogicalScale);
       }
     });
 
@@ -86,7 +106,7 @@ export default function DraggableSticker({ id, source, initialX, initialY, initi
   const composed = Gesture.Simultaneous(pan, pinch, tap);
 
   const animatedStyle = useAnimatedStyle(() => {
-    const size = 80 * scale.value;
+    const size = 80 * displayScale.value;
     const offset = (size - 80) / 2;
     return {
       width: size,
@@ -115,7 +135,7 @@ export default function DraggableSticker({ id, source, initialX, initialY, initi
 
   return (
     <GestureDetector gesture={composed}>
-      <Animated.View 
+      <Animated.View
         style={[{ position: 'absolute', top: 0, left: 0, zIndex: 10 }, animatedStyle]}
       >
         <View style={{ borderWidth: isSelected ? 2 : 0, borderColor: '#3b82f6', borderStyle: 'dashed', flex: 1 }}>
